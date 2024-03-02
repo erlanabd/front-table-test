@@ -1,0 +1,30 @@
+.box {
+  height: 30px;
+  transform: translate(-20%);
+  display: flex;
+  cursor: pointer;
+  padding: 10px 20px;
+  background: #fff;
+  align-items: center;
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: max-content;
+}
+.box input {
+  max-width: 400px;
+  width: 100%;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  transition: 0.8s;
+  background: transparent;
+}
+
+.icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  background: url("./../../assets/icons/search.svg") center center / contain
+    no-repeat;
+}

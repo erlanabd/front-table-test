@@ -1,0 +1,26 @@
+.table__body {
+  width: 95%;
+  max-height: calc(89% - 25px);
+  background-color: #fffb;
+  margin: 12px auto;
+  border-radius: 9px;
+  overflow: scroll;
+}
+
+.body {
+  transition: 1s;
+}
+
+.non-active {
+  position: absolute;
+  top: -100%;
+  transition: 1s;
+}
+
+.empty-list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
