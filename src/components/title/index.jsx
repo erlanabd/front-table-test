@@ -20,8 +20,12 @@ const Title = ({
         <option value="" disabled>
           Фильтр
         </option>
-        <option value="">name</option>
-        <option value="">e-mail</option>
+        <option key="name" value="name">
+          name
+        </option>
+        <option key="email" value="email">
+          e-mail
+        </option>
       </select>
       <Input value={value} onChange={onChangeInput} />
       <UpdateBtn onClick={onClick} />

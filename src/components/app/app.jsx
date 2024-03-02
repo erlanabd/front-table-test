@@ -9,7 +9,7 @@ function App() {
   const [users, setUsers] = useState(null);
   const [global, setGlobal] = useState(true);
   const [inputValue, setInputValue] = useState("");
-  const [selectValue, setSelectValue] = useState("");
+  const [selectedSort, setSelectedSort] = useState("");
 
   const getUsers = async () => {
     setInputValue("");
@@ -46,7 +46,14 @@ function App() {
       }
     });
 
-  const sortUsers = users && users;
+  const sortUsers = (sort) => {
+    setSelectedSort(sort);
+    if (sort === "name") {
+      setUsers([...users].sort((a, b) => a.name.localeCompare(b.name)));
+    } else if (sort === "email") {
+      setUsers([...users].sort((a, b) => a.email.localeCompare(b.email)));
+    }
+  };
 
   const inputHandler = (value) => {
     const trimmedValue = value.trim();
@@ -57,6 +64,8 @@ function App() {
     <div className={styles["app"]}>
       <BoxLayout>
         <Title
+          selectValue={selectedSort}
+          onChangeSelect={sortUsers}
           value={inputValue}
           onChangeInput={inputHandler}
           onClick={getUsers}
